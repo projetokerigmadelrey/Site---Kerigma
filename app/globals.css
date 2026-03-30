@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@theme {
+  --font-body: var(--font-manrope), ui-sans-serif, system-ui;
+  --font-headline: var(--font-space-grotesk), ui-sans-serif, system-ui;
+
+  --color-primary: #004ce1;
+  --color-primary-container: #809bff;
+  --color-on-primary: #f2f2ff;
+  
+  --color-secondary: #755700;
+  --color-secondary-container: #ffca4d;
+  --color-on-secondary-container: #5c4400;
+
+  --color-tertiary: #00647b;
+  --color-tertiary-container: #00cffc;
+  --color-on-tertiary-container: #004050;
+
+  --color-background: #f5f6f7;
+  --color-on-surface: #2c2f30;
+  --color-on-surface-variant: #595c5d;
+
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #eff1f2;
+  --color-surface-container-high: #e0e3e4;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-on-surface;
+  }
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #004ce1 0%, #809bff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.glass-nav {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+}
+
+.halo-effect {
+  position: relative;
+}
+
+.halo-effect::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 140%;
+  height: 140%;
+  background: radial-gradient(circle, rgba(0, 207, 252, 0.15) 0%, transparent 70%);
+  z-index: -1;
+}
